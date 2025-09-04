@@ -1,0 +1,16 @@
+cask_args appdir: "/Applications"
+
+brew "gh"
+brew "git"
+brew "jq"
+brew "wget"
+
+cask "cursor"
+cask "docker"
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "notion"
+cask "raycast"
+cask "slack"
+cask "visual-studio-code"
+cask "zoom"
