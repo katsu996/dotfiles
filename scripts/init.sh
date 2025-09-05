@@ -2,7 +2,6 @@
 
 set -eu
 
-sudo softwareupdate --install-rosetta
 brew bundle install --file="${HOME}"/dotfiles/.Brewfile
 
 echo "Changing MacOS settings"
