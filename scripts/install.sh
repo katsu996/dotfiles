@@ -17,6 +17,4 @@ else
     git pull origin main
 fi
 
-cd dotfiles
-
 make init
