@@ -11,6 +11,10 @@ fi
 
 if [ ! -d dotfiles ]; then
     git clone https://github.com/katsu996/dotfiles.git
+    cd dotfiles
+else
+    cd dotfiles
+    git pull origin main
 fi
 
 cd dotfiles
