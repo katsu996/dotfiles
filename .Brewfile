@@ -18,6 +18,7 @@ brew "yabai"
 
 cask "alt-tab"
 cask "cursor"
+cask "dockutil"
 cask "drawio"
 cask "ghostty"
 cask "github"
