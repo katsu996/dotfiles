@@ -21,11 +21,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 echo "隠しファイルを表示"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-echo "■Safari関連■"
-echo "検索クエリをAppleへ送信しない"
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-
 echo "■メニューバー関連■"
 echo "半透明処理を無効化"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
