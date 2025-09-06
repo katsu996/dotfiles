@@ -23,8 +23,8 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 echo "■メニューバー関連■"
 echo "半透明処理を無効化"
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
-echo "右端の時刻表示、12月23日(月) 12:34:56"
-defaults write com.apple.menuextra.clock DateFormat -string "M\u6708d\u65e5(EEE) H:mm:ss"
+echo "右端の時刻表示、12:34:56"
+defaults write com.apple.menuextra.clock DateFormat -string "H:mm:ss"
 echo "バッテリーの残量をパーセント表示"
 defaults write com.apple.menuextra.battery ShowPercent YES
 
