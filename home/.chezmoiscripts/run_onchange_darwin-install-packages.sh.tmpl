@@ -1,0 +1,41 @@
+{{- if eq.chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# Homebrewがインストールされていない場合は、インストールする
+if! which -s "brew"; then
+    echo "🍺 Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "✅ Homebrew installed successfully."
+fi
+
+# 共通のパッケージリストをインストールする
+echo "Applying common Homebrew packages..."
+brew bundle --file=/dev/stdin <<EOF
+{{ range.packages.darwin.brews.common -}}
+brew {{. | quote }}
+{{ end -}}
+{{ range.packages.darwin.casks.common -}}
+cask {{. | quote }}
+{{ end -}}
+EOF
+
+# ロール（仕事用/個人用）に応じたパッケージリストをインストールする
+echo "Applying role-specific Homebrew packages..."
+brew bundle --file=/dev/stdin <<EOF
+{{ if eq.data.role "work" -}}
+{{ range.packages.darwin.brews.work -}}
+brew {{. | quote }}
+{{ end -}}
+{{ range.packages.darwin.casks.work -}}
+cask {{. | quote }}
+{{ end -}}
+{{ else if eq.data.role "personal" -}}
+{{ range.packages.darwin.brews.personal -}}
+brew {{. | quote }}
+{{ end -}}
+{{ range.packages.darwin.casks.personal -}}
+cask {{. | quote }}
+{{ end -}}
+{{ end -}}
+EOF
+{{ end -}}

@@ -1,0 +1,46 @@
+{{- if eq.chezmoi.os "windows" -}}
+
+# WinGetがインストールされていることを確認する
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing WinGet..."
+    Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
+    Write-Host "WinGet installation request sent. You may need to restart the terminal."
+}
+
+# WinGetを使用して共通パッケージをインストールする
+if ((Get-Command winget -ErrorAction SilentlyContinue)) {
+    Write-Host "Applying common WinGet packages..."
+    $winget_common_packages = @(
+{{- range.packages.windows.wingets.common -}}
+        '{{. }}'
+{{- end -}}
+    )
+    foreach ($package in $winget_common_packages) {
+        Write-Host "Installing $package with WinGet..."
+        winget install --id $package --silent --accept-source-agreements --accept-package-agreements
+    }
+}
+
+# ロール（仕事用/個人用）に応じたパッケージリストをインストールする
+if ((Get-Command winget -ErrorAction SilentlyContinue)) {
+    Write-Host "Applying role-specific WinGet packages..."
+    $winget_role_packages = @()
+{{ if eq.data.role "work" -}}
+    $winget_role_packages = @(
+{{- range.packages.windows.wingets.work -}}
+        '{{. }}'
+{{- end -}}
+    )
+{{ else if eq.data.role "personal" -}}
+    $winget_role_packages = @(
+{{- range.packages.windows.wingets.personal -}}
+        '{{. }}'
+{{- end -}}
+    )
+{{ end -}}
+    foreach ($package in $winget_role_packages) {
+        Write-Host "Installing $package with Winget..."
+        winget install --id $package --silent --accept-source-agreements --accept-package-agreements
+    }
+}
+{{ end -}}

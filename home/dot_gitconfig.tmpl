@@ -1,0 +1,37 @@
+# -*-mode:gitconfig-*- vim:ft=gitconfig
+
+# ~/.gitconfig
+# =============================================================================
+# User-specific Git configuration file.
+#
+# See https://git-scm.com/docs/git-config
+#
+# {{- /* This file supports Go's text/template language. */ -}}
+#
+# Sources:
+#     https://delicious-insights.com/en/posts/mastering-git-submodules/
+#     https://github.com/haacked/dotfiles
+#     https://github.com/holman/dotfiles
+#     https://github.com/jayharris/dotfiles-windows
+#     https://github.com/mathiasbynens/dotfiles
+#     https://git-scm.com/docs/git-config/
+
+[user]
+    # Specify the email address of the author/committer.
+    email = "{{ .email }}"
+
+    # Specify the username of the author/committer.
+    name = "{{ .name }}"
+
+[filter "lfs"]
+    # Specify the command to convert a worktree file's content to a blob upon checkin.
+    clean = git-lfs clean -- %f
+
+    # Convert between Large File Storage pointer and actual content.
+    process = git-lfs filter-process
+
+    # Specify the command to convert a blob object's content to a worktree file upon checkout.
+    smudge = git-lfs smudge -- %f
+
+    # Turn a content that by itself is unusable into a usable content.
+    required = true
