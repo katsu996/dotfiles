@@ -30,13 +30,22 @@ winget install twpayne.chezmoi
 chezmoi init --apply katsu996/dotfiles.git
 ```
 
+プロンプトが表示されずinitされてしまった場合は、手動で`/Users/katsu996/.config/chezmoi/chezmoi.toml`ファイルを作成して以下を入力する。
+
+```toml
+[data]
+    email = "firstname.lastname@example.com"
+    name = "firstname.lastname"
+    role = "work or personal"
+```
+
 ### chezmoiの日常的な使用
 
 環境を最新の状態に保つために、定期的に以下のコマンドを実行する。
 
 変更の確認: `chezmoi diff` コマンドで、リポジトリと現在の環境の差異を確認できる。
 
-最新状態への更新: `chezmoi update` コマンドで、リポジトリの最新の変更をプルし、ホームディレクトリに適用する。
+最新状態への更新: `chezmoi update --apply` コマンドで、リポジトリの最新の変更をプルし、ホームディレクトリに適用する。
 
 ## 開発環境
 

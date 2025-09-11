@@ -1,5 +1,5 @@
-{{ if eq.data.role "work" -}}
-{{ template "mise-work.tmpl". }}
-{{- else if eq.data.role "personal" -}}
-{{ template "mise-personal.tmpl". }}
-{{- end }}
+{{- if eq .role "work" -}}
+{{ template "mise-work.tmpl" . }}
+{{- else if eq .role "personal" -}}
+{{ template "mise-personal.tmpl" . }}
+{{- end -}}

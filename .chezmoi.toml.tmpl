@@ -13,7 +13,9 @@
 
 # {{- $email := promptString "Git email address for the author/committer" }}
 # {{- $name := promptString "Git username for the author/committer" }}
+# {{- $role := promptString "Role for this machine (e.g. work, personal)" "personal" }}
 
 [data]
     email = "{{ $email }}"
     name = "{{ $name }}"
+    role = "{{ $role }}"

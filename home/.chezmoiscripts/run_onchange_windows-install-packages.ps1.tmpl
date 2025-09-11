@@ -1,4 +1,4 @@
-{{- if eq.chezmoi.os "windows" -}}
+{{- if eq .chezmoi.os "windows" -}}
 
 # WinGetがインストールされていることを確認する
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
@@ -11,8 +11,8 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying common WinGet packages..."
     $winget_common_packages = @(
-{{- range.packages.windows.wingets.common -}}
-        '{{. }}'
+{{- range .packages.windows.wingets.common -}}
+        '{{ . }}'
 {{- end -}}
     )
     foreach ($package in $winget_common_packages) {
@@ -25,22 +25,22 @@ if ((Get-Command winget -ErrorAction SilentlyContinue)) {
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying role-specific WinGet packages..."
     $winget_role_packages = @()
-{{ if eq.data.role "work" -}}
+{{- if eq .role "work" -}}
     $winget_role_packages = @(
-{{- range.packages.windows.wingets.work -}}
-        '{{. }}'
+{{- range .packages.windows.wingets.work -}}
+        '{{ . }}'
 {{- end -}}
     )
-{{ else if eq.data.role "personal" -}}
+{{- else if eq .role "personal" -}}
     $winget_role_packages = @(
-{{- range.packages.windows.wingets.personal -}}
-        '{{. }}'
+{{- range .packages.windows.wingets.personal -}}
+        '{{ . }}'
 {{- end -}}
     )
-{{ end -}}
+{{- end -}}
     foreach ($package in $winget_role_packages) {
         Write-Host "Installing $package with Winget..."
         winget install --id $package --silent --accept-source-agreements --accept-package-agreements
     }
 }
-{{ end -}}
+{{- end -}}
