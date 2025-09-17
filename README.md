@@ -53,12 +53,46 @@ chezmoi init --apply katsu996/dotfiles.git
 |-----------------|----------------------------------|-------------------------|
 | シェル            | clink                            | zsh                     |
 | ターミナル         | Windows Terminal<br>Ghostty(予定) | Ghostty                 |
-| エディタ           | VSCode                           | VSCode<br>cursor<br>zed  |
-| ウィンドウマネージャー | -                                | yabai + skhd             |
+| エディタ           | VSCode                           | VSCode<br>cursor<br>zed |
+| ウィンドウマネージャー | -                                | Rectangle + AltTab       |
 | プロンプト         | Starship                         | Starship                 |
 | パッケージマネージャー | WinGet<br>UnigetUI              | Homebrew                 |
 | バージョンマネージャー | Volta → mise                    | mise                     |
 | ブラウザ           | Chrome                          | Chrome                   |
 | 開発ツール        | Notion<br>Obsidian               | Notion                  |
 | ランチャー         | Raycast(予定)                    | Raycast                  |
-| Docker          | Docker Desktop                   | OrbStack                 |
+| Docker          | Docker Desktop                   | OrbStack                |
+| DBツール          | A5:SQL Mk-2                      | Sequel Ace              |
+
+## Mac キーマッピング
+
+### HHKB
+
+| Windows | Mac変更後 | Macデフォルト |
+|------|------|------|
+| CTRL | Command | Control |
+| Windows| Option | Command |
+| ALT| Control | Option |
+
+### Mac内蔵キーボード
+
+| デフォルト| 変更後 |
+|------|------|
+| Caps Lock |Command |
+| Control | Caps Lock |
+| Option | Option |
+| Command | Control |
+
+### Raycast
+
+#### Raycast Hotkey
+
+Command + Space
+
+#### Clipboard History
+
+Option + V
+
+### Alt Tab
+
+Control + Tab
