@@ -38,6 +38,7 @@ packages:
         - notion
         - orbstack
         - raycast
+        - rectangle
         - scroll-reverser
         - sequel-ace
         - visual-studio-code
