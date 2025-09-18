@@ -1,0 +1,8 @@
+*.log
+.DS_Store
+
+katsu_temp/
+katsu_tmp/
+katsuTemp/
+katsuTmp/
+node_modules/
