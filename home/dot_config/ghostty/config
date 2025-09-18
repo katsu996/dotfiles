@@ -1,2 +1,15 @@
+# テーマ
+theme = GitHub-Dark-Default
+
+# 背景の透明度
 background-opacity = 0.8
+# 背景をぼかす
 background-blur-radius = 10
+
+# クイックターミナルを上部に表示
+quick-terminal-position = "top"
+# アニメーション時間を設定（0で即時表示）
+quick-terminal-animation-duration = 0
+# グローバルのキーバインドを設定
+keybind = "global:cmd+shift+space=toggle_quick_terminal"
+keybind = f11=toggle_fullscreen
