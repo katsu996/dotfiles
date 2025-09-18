@@ -26,6 +26,7 @@ packages:
     casks:
       common:
         - alt-tab
+        - apidog
         - cursor
         - ghostty
         - github
