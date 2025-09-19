@@ -1,5 +1,5 @@
 # テーマ
-theme = GitHub-Dark-Default
+theme = "GitHub Dark Default"
 
 # 背景の透明度
 background-opacity = 0.8
