@@ -25,15 +25,15 @@ brew outdated
 '''
 
 [tasks.up-all]
-description = "mise, WinGetのパッケージを更新"
+description = "mise, Brewのパッケージを更新"
 run = '''
 mise upgrade
-winget upgrade --all"
+brew upgrade --all
 '''
 
-[tasks.up-winget]
-description = "WinGetのパッケージを更新"
-run = "winget upgrade --all"
+[tasks.up-brew]
+description = "Brewのパッケージを更新"
+run = "brew upgrade"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
