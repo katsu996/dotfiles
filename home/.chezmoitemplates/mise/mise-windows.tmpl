@@ -1,0 +1,6 @@
+{{/* Windows用の設定 */}}
+{{- if eq .role "work" -}}
+{{ template "mise-windows-work.tmpl" . }}
+{{- else if eq .role "personal" -}}
+{{ template "mise-windows-personal.tmpl" . }}
+{{- end -}}

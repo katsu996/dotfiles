@@ -1,5 +1,11 @@
-{{- if eq .role "work" -}}
-{{ template "mise-work.tmpl" . }}
-{{- else if eq .role "personal" -}}
-{{ template "mise-personal.tmpl" . }}
+{{- if and (eq .chezmoi.os "darwin") (eq .role "work") -}}
+    {{ template "mise/darwin/mise-darwin-work.tmpl" . }}
+{{- else if and (eq .chezmoi.os "darwin") (eq .role "personal") -}}
+    {{ template "mise/darwin/mise-darwin-personal.tmpl" . }}
+{{- else if and (eq .chezmoi.os "windows") (eq .role "work") -}}
+    {{ template "mise/windows/mise-windows-work.tmpl" . }}
+{{- else if and (eq .chezmoi.os "windows") (eq .role "personal") -}}
+    {{ template "mise/windows/mise-windows-personal.tmpl" . }}
+{{- else -}}
+    {{- fail (printf "サポートされていないOSまたはroleの組み合わせです: OS=%s, role=%s" .chezmoi.os .role) -}}
 {{- end -}}

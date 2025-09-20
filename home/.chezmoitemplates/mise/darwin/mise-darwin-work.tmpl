@@ -1,0 +1,41 @@
+{{/* macOS Work用の設定 */}}
+[tools]
+bun = "latest"
+deno = "latest"
+go = "latest"
+java = "24"
+node = "20"
+npm = "10"
+pnpm = "10"
+python = "3.13"
+rust = "latest"
+uv = "latest"
+yarn = "4"
+zig = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@google/gemini-cli" = "latest"
+
+[tasks.o]
+description = "更新可能なパッケージを出力"
+run = '''
+mise outdated
+brew outdated
+'''
+
+[tasks.up-all]
+description = "mise, Brewのパッケージを更新"
+run = '''
+mise upgrade
+brew upgrade
+'''
+
+[tasks.up-brew]
+description = "Brewのパッケージを更新"
+run = "brew upgrade"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
+experimental = true
+
+[settings.pipx]
+uvx = true

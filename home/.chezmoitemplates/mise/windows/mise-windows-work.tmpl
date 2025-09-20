@@ -1,3 +1,4 @@
+{{/* Windows Work用の設定 */}}
 [tools]
 bun = "latest"
 deno = "latest"
@@ -13,6 +14,13 @@ yarn = "4"
 zig = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
+
+[tasks.o]
+description = "更新可能なパッケージを出力"
+run = '''
+mise outdated
+winget upgrade
+'''
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]

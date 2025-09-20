@@ -1,3 +1,4 @@
+{{/* macOS Personal用の設定 */}}
 [tools]
 bun = "latest"
 deno = "latest"
@@ -15,6 +16,24 @@ zig = "latest"
 "npm:@elgato/cli" = "latest"
 "npm:@katsu996/common-utils" = "latest"
 "npm:@google/gemini-cli" = "latest"
+
+[tasks.o]
+description = "更新可能なパッケージを出力"
+run = '''
+mise outdated
+brew outdated
+'''
+
+[tasks.up-all]
+description = "mise, WinGetのパッケージを更新"
+run = '''
+mise upgrade
+winget upgrade --all"
+'''
+
+[tasks.up-winget]
+description = "WinGetのパッケージを更新"
+run = "winget upgrade --all"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
