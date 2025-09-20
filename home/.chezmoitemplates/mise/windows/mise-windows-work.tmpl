@@ -17,17 +17,17 @@ zig = "latest"
 
 [tasks.o]
 description = "更新可能なパッケージを出力"
-run = '''
-mise outdated
-winget upgrade
-'''
+run = [
+  "mise outdated",
+  "winget upgrade"
+]
 
 [tasks.up-all]
 description = "mise, WinGetのパッケージを更新"
-run = '''
-mise upgrade
-winget upgrade --all
-'''
+run = [
+  "mise upgrade",
+  "winget upgrade --all"
+]
 
 [tasks.up-winget]
 description = "WinGetのパッケージを更新"
