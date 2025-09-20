@@ -11,9 +11,9 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying common WinGet packages..."
     $winget_common_packages = @(
-{{- range .packages.windows.wingets.common -}}
-        '{{ . }}'
-{{- end -}}
+        {{- range .packages.windows.wingets.common -}}
+                '{{ . }}'
+        {{- end -}}
     )
     foreach ($package in $winget_common_packages) {
         Write-Host "Installing $package with WinGet..."
@@ -25,15 +25,15 @@ if ((Get-Command winget -ErrorAction SilentlyContinue)) {
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying role-specific WinGet packages..."
     $winget_role_packages = @(
-{{- if eq .role "work" -}}
-{{- range .packages.windows.wingets.work -}}
-        '{{ . }}'
-{{- end -}}
-{{- else if eq .role "personal" -}}
-{{- range .packages.windows.wingets.personal -}}
-        '{{ . }}'
-{{- end -}}
-{{- end -}}
+        {{- if eq .role "work" -}}
+            {{- range .packages.windows.wingets.work -}}
+                    '{{ . }}'
+            {{- end -}}
+        {{- else if eq .role "personal" -}}
+            {{- range .packages.windows.wingets.personal -}}
+                    '{{ . }}'
+            {{- end -}}
+        {{- end -}}
     )
 
     if ($winget_role_packages.Count -gt 0) {
@@ -45,4 +45,5 @@ if ((Get-Command winget -ErrorAction SilentlyContinue)) {
         Write-Host "No role-specific packages to install."
     }
 }
+
 {{- end -}}

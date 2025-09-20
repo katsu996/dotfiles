@@ -11,31 +11,37 @@ fi
 # 共通のパッケージリストをインストールする
 echo "Applying common Homebrew packages..."
 brew bundle --file=/dev/stdin <<EOF
+
 {{- range .packages.darwin.brews.common }}
-brew {{ . | quote }}
+    brew {{ . | quote }}
 {{- end }}
+
 {{- range .packages.darwin.casks.common }}
-cask {{ . | quote }}
+    cask {{ . | quote }}
 {{- end }}
 EOF
 
 # ロール（仕事用/個人用）に応じたパッケージリストをインストールする
 echo "Applying role-specific Homebrew packages..."
 brew bundle --file=/dev/stdin <<EOF
+
 {{- if eq .role "work" -}}
-{{- range .packages.darwin.brews.work }}
-brew {{ . | quote }}
-{{- end }}
-{{- range .packages.darwin.casks.work }}
-cask {{ . | quote }}
-{{- end }}
-{{- else if eq .role "personal" -}}
-{{- range .packages.darwin.brews.personal }}
-brew {{ . | quote }}
-{{- end }}
-{{- range .packages.darwin.casks.personal }}
-cask {{ . | quote }}
-{{- end }}
-{{- end }}
+    {{- range .packages.darwin.brews.work }}
+        brew {{ . | quote }}
+    {{- end }}
+
+    {{- range .packages.darwin.casks.work }}
+        cask {{ . | quote }}
+    {{- end }}
+
+    {{- else if eq .role "personal" -}}
+        {{- range .packages.darwin.brews.personal }}
+            brew {{ . | quote }}
+        {{- end }}
+
+        {{- range .packages.darwin.casks.personal }}
+            cask {{ . | quote }}
+        {{- end }}
+    {{- end }}
 EOF
 {{- end -}}

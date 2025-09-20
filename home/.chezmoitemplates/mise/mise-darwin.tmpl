@@ -1,6 +1,6 @@
 {{/* macOS用の設定 */}}
 {{- if eq .role "work" -}}
-{{ template "mise-darwin-work.tmpl" . }}
+    {{ template "mise-darwin-work.tmpl" . }}
 {{- else if eq .role "personal" -}}
-{{ template "mise-darwin-personal.tmpl" . }}
+    {{ template "mise-darwin-personal.tmpl" . }}
 {{- end -}}
