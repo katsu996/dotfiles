@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "darwin" -}}
+{{ include "starship/starship-darwin.toml" | trim }}
+{{ else if eq .chezmoi.os "windows" -}}
+{{ include "starship/starship-windows.toml" | trim }}
+{{ end -}}
