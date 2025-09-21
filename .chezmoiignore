@@ -10,11 +10,11 @@
 README.md
 
 # Ignore non-macOS files.
-# {{ if ne .chezmoi.os "darwin" -}}
-
-# {{- end }}
+{{ if ne .chezmoi.os "darwin" -}}
+    dot_config/ghostty
+{{- end }}
 
 # Ignore non-Windows files.
 {{ if ne .chezmoi.os "windows" -}}
-dot_config/windows_terminal
+    dot_config/windows_terminal
 {{- end }}
