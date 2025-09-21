@@ -1,3 +1,4 @@
+{{/* macOS用の設定 */}}
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -41,9 +42,17 @@ format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
 [git_branch]
+symbol = ""
 style = "bg:color_aqua"
-format = '[[ $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_aqua"
@@ -55,12 +64,12 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [c]
-symbol = "c:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [cpp]
-symbol = "cpp:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
@@ -70,37 +79,37 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [golang]
-symbol = "golang:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [haskell]
-symbol = "haskell:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [java]
-symbol = "java:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [kotlin]
-symbol = "kotlin:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [nodejs]
-symbol = "nodejs:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [php]
-symbol = "php:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [python]
-symbol = "python:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
@@ -110,9 +119,18 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [rust]
-symbol = "rust:"
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [line_break]
 disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
