@@ -1,6 +1,6 @@
 # dotfiles
 
-- macOS (Homebrew) とWindows (winget) の両方に対応
+- macOS (Homebrew) とWindows (WinGet) の両方に対応
 - common（共通）、work（仕事用）、personal（個人用）の3つのカテゴリでパッケージを管理
 
 ## 初期セットアップ
@@ -30,7 +30,7 @@ winget install twpayne.chezmoi
 chezmoi init --apply katsu996/dotfiles.git
 ```
 
-プロンプトが表示されずinitされてしまった場合は、手動で`/Users/katsu996/.config/chezmoi/chezmoi.toml`ファイルを作成して以下を入力する。
+プロンプトが表示されずinitされてしまった場合は、手動で`~/.config/chezmoi/chezmoi.toml`ファイルを作成して以下を入力する。
 
 ```toml
 [data]
