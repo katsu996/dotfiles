@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    "MS-CEINTL.vscode-language-pack-ja",
+    "PKief.material-icon-theme",
+    "Anthropic.claude-code",
+    "EditorConfig.EditorConfig",
+    "spmeesseman.vscode-taskexplorer",
+    "Gruntfuggly.todo-tree",
+    "donjayamanne.githistory",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "github.vscode-github-actions",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "mosapride.zenkaku",
+    "shardulm94.trailing-spaces",
+    "ms-vscode.vscode-typescript-next",
+    "biomejs.biome",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.mypy-type-checker",
+    "charliermarsh.ruff",
+    "KevinRose.vsc-python-indent",
+    "janisdd.vscode-edit-csv",
+    "mechatroner.rainbow-csv"
+  ]
+}
