@@ -1,0 +1,8 @@
+{
+  "theme": "GitHub",
+  "contextFileName": "GEMINI.md",
+  "autoAccept": false,
+  "checkpointing": {
+    "enabled": true
+  }
+}
