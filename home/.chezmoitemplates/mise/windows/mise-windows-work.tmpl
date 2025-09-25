@@ -15,6 +15,10 @@ zig = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@google/gemini-cli" = "latest"
 
+[tasks.dotfiles]
+description = "chezmoiを最新化"
+run = "chezmoi update --apply"
+
 [tasks.o]
 description = "更新可能なパッケージを出力"
 run = [
