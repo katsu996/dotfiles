@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(serena:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(ls:*)",
