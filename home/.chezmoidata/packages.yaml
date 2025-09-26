@@ -28,6 +28,7 @@ packages:
         - alt-tab
         - apidog
         - cursor
+        - font-jetbrains-mono-nerd-font
         - ghostty
         - github
         - gitify
