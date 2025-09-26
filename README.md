@@ -89,6 +89,23 @@ chezmoi apply
 | Docker          | Docker Desktop                   | OrbStack                |
 | DBツール          | A5:SQL Mk-2                      | Sequel Ace              |
 
+## ディレクトリ構成
+
+```
+chezmoi/
+├───.claude/...
+├───.gemini/...
+├───.vscode/...
+├───home/...
+├───other_dot_config/...
+├───settingBackup/...
+├───.chezmoi.toml.tmpl
+├───.chezmoiignore
+├───.chezmoiroot
+├───.gitignore
+└───README.md
+```
+
 ## Mac キーマッピング
 
 ### HHKB
