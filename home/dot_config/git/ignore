@@ -1,6 +1,7 @@
 *.log
 .DS_Store
 
+.serena/
 katsu_temp/
 katsu_tmp/
 katsuTemp/
