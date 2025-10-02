@@ -3,6 +3,7 @@ packages:
     brews:
       common:
         - bat
+        - chezmoi
         - cmake
         - curl
         - docker
@@ -27,6 +28,7 @@ packages:
       common:
         - alt-tab
         - apidog
+        - claude
         - cursor
         - font-jetbrains-mono-nerd-font
         - ghostty
@@ -36,8 +38,11 @@ packages:
         - google-drive
         - google-japanese-ime
         - itsycal
+        - jordanbaird-ice
         - logi-options+
         - notion
+        - notion-calendar
+        - opcode
         - orbstack
         - raycast
         - rectangle
@@ -46,9 +51,9 @@ packages:
         - visual-studio-code
         - zed
       work:
+        - badgeify
         - drawio
         - figma
-        - meetingbar
         - slack
         - zoom
       personal:
