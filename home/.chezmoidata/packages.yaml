@@ -19,6 +19,7 @@ packages:
         - ripgrep
         - shellcheck
         - starship
+        - stats
         - tree
         - usage
         - wget
@@ -27,6 +28,7 @@ packages:
     casks:
       common:
         - alt-tab
+        - applite
         - apidog
         - claude
         - cursor
