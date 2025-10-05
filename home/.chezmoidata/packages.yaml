@@ -8,8 +8,6 @@ packages:
         - curl
         - docker
         - fd
-        - gemini-cli
-        - gh
         - git
         - hadolint
         - htop
@@ -21,10 +19,7 @@ packages:
         - starship
         - stats
         - tree
-        - usage
         - wget
-      work:
-        - awscli
     casks:
       common:
         - alt-tab
