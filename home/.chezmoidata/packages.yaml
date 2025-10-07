@@ -20,6 +20,8 @@ packages:
         - stats
         - tree
         - wget
+      work:
+      personal:
     casks:
       common:
         - alt-tab
