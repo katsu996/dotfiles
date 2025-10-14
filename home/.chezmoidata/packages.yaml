@@ -29,6 +29,7 @@ packages:
         - apidog
         - claude
         - cursor
+        - dockdoor
         - font-jetbrains-mono-nerd-font
         - ghostty
         - github
