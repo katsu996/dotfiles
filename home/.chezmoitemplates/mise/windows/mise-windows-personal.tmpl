@@ -19,6 +19,10 @@ zig = "latest"
 "npm:@google/gemini-cli" = "latest"
 "npm:ccusage" = "latest"
 
+[tasks.cc]
+description = "Claude Code Bypass all permission checks"
+run = "claude --dangerously-skip-permissions"
+
 [tasks.cc-daily]
 description = "ccusage Daily token usage and costs"
 run = "ccusage daily"
