@@ -28,6 +28,7 @@ packages:
         - apidog
         - claude
         - cursor
+        - diffmerge
         - dockdoor
         - font-jetbrains-mono-nerd-font
         - ghostty
@@ -58,7 +59,6 @@ packages:
       personal:
         - discord
         - nordvpn
-        - spotify
         - steam
   windows:
     wingets:
