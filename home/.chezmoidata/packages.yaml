@@ -8,6 +8,7 @@ packages:
         - curl
         - docker
         - fd
+        - ffmpeg
         - git
         - hadolint
         - htop
