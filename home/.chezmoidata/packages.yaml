@@ -13,6 +13,7 @@ packages:
         - hadolint
         - htop
         - jq
+        - lefthook
         - make
         - mise
         - ripgrep
@@ -127,6 +128,7 @@ packages:
         - Microsoft.UI.Xaml.2.8
         - Microsoft.VCLibs.Desktop.14
         - Microsoft.WindowsTerminal
+        - evilmartians.lefthook
       work:
         - Figma.Figma
         - Zoom.Zoom
