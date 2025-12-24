@@ -43,6 +43,7 @@ packages:
         - logi-options+
         - notion
         - notion-calendar
+        - obsidian
         - opcode
         - orbstack
         - raycast
