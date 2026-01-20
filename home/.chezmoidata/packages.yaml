@@ -33,6 +33,7 @@ packages:
         - apidog
         - claude
         - cursor
+        - cursor-cli
         - diffmerge
         - dockdoor
         - font-jetbrains-mono-nerd-font
