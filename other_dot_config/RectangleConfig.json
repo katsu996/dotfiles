@@ -235,6 +235,9 @@
     "unsnapRestore" : {
       "int" : 0
     },
+    "widthStepSize" : {
+      "float" : 30
+    },
     "windowSnapping" : {
       "int" : 0
     }
@@ -253,28 +256,28 @@
       "modifierFlags" : 655360
     },
     "centerThird" : {
-      "keyCode" : 3,
-      "modifierFlags" : 655360
+      "keyCode" : 1,
+      "modifierFlags" : 1703936
     },
     "centerTwoThirds" : {
-      "keyCode" : 15,
-      "modifierFlags" : 655360
+      "keyCode" : 13,
+      "modifierFlags" : 1703936
     },
     "firstThird" : {
-      "keyCode" : 2,
-      "modifierFlags" : 655360
+      "keyCode" : 0,
+      "modifierFlags" : 1703936
     },
     "firstTwoThirds" : {
-      "keyCode" : 14,
-      "modifierFlags" : 655360
+      "keyCode" : 12,
+      "modifierFlags" : 1703936
     },
     "lastThird" : {
-      "keyCode" : 5,
-      "modifierFlags" : 655360
+      "keyCode" : 2,
+      "modifierFlags" : 1703936
     },
     "lastTwoThirds" : {
-      "keyCode" : 17,
-      "modifierFlags" : 655360
+      "keyCode" : 14,
+      "modifierFlags" : 1703936
     },
     "leftHalf" : {
       "keyCode" : 123,
@@ -337,5 +340,5 @@
       "modifierFlags" : 655360
     }
   },
-  "version" : "96"
+  "version" : "99"
 }
