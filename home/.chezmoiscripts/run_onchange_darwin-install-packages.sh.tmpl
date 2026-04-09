@@ -8,6 +8,9 @@ if ! which -s "brew"; then
     echo "✅ Homebrew installed successfully."
 fi
 
+# 公式以外のリポジトリを追加
+brew tap manaflow-ai/cmux
+
 # 共通のパッケージリストをインストールする
 echo "Applying common Homebrew packages..."
 brew bundle --file=/dev/stdin <<EOF
