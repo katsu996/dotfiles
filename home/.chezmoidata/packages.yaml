@@ -9,20 +9,27 @@ packages:
         - docker
         - fd
         - ffmpeg
+        - font-symbols-only-nerd-font
+        - fzf
         - git
         - hadolint
         - htop
+        - imagemagick
         - jq
         - lefthook
         - make
         - mise
+        - poppler
+        - resvg
         - ripgrep
+        - sevenzip
         - shellcheck
         - starship
         - tree
         - yazi
         - yq
         - wget
+        - zoxide
         - zsh-autosuggestions
         - zsh-completions
       work:
