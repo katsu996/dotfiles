@@ -2,10 +2,9 @@
 .DS_Store
 
 .serena/
-katsu_temp/
-katsu_tmp/
-katsuTemp/
-katsuTmp/
-KatsuTemp/
-KatsuTmp/
 node_modules/
+
+.katsuTemp/
+.KatsuTemp/
+katsuTemp/
+KatsuTemp/
