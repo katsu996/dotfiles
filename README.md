@@ -138,3 +138,21 @@ Option + V
 ### Alt Tab
 
 Control + Tab
+
+## Claude Code Settings
+
+Claude Codeの設定は以下からコピーして作成を行っている。
+
+[Everything Claude Code](https://github.com/affaan-m/everything-claude-code)
+
+### home\dot_claude\rules\common\coding-style.md
+
+<https://github.com/affaan-m/everything-claude-code/blob/main/docs/ja-JP/rules/coding-style.md>
+
+### home\dot_claude\rules\typescript\coding-style.md
+
+<https://github.com/affaan-m/everything-claude-code/blob/main/rules/typescript/coding-style.md>
+
+### home\dot_claude\skills\coding-standards\SKILL.md
+
+<https://github.com/affaan-m/everything-claude-code/blob/main/docs/ja-JP/skills/coding-standards/SKILL.md>
