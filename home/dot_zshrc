@@ -1,3 +1,5 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 eval "$(mise activate zsh)"
 
 export NVM_DIR="$HOME/.nvm"
