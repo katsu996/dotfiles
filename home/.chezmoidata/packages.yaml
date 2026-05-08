@@ -67,7 +67,6 @@ packages:
         - visual-studio-code
         - zed
       work:
-        - badgeify
         - drawio
         - figma
         - slack
