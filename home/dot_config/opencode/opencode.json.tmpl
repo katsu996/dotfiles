@@ -1,0 +1,5 @@
+{{- if and (eq .chezmoi.os "windows") (eq .role "personal") -}}
+    {{ template "opencode/windows/opencode-windows-personal.json.tmpl" . }}
+{{- else -}}
+    {{- fail (printf "サポートされていないOSまたはroleの組み合わせです: OS=%s, role=%s" .chezmoi.os .role) -}}
+{{- end -}}

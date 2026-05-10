@@ -1,0 +1,4 @@
+{{/* Windows用の設定 */}}
+{{- if eq .role "personal" -}}
+    {{ template "opencode-windows-personal.tmpl" . }}
+{{- end -}}
