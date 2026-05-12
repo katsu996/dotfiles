@@ -32,6 +32,11 @@ chezmoi init --apply katsu996/dotfiles.git
 
 プロンプトが表示されずinitされてしまった場合は、手動で`~/.config/chezmoi/chezmoi.toml`ファイルを作成して以下を入力する。
 
+```Bash
+touch ~/.config/chezmoi/chezmoi.toml
+vi ~/.config/chezmoi/chezmoi.toml
+```
+
 ```toml
 [data]
     email = "firstname.lastname@example.com"
