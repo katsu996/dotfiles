@@ -46,19 +46,20 @@ run = "chezmoi update --apply"
 description = "更新可能なパッケージを出力"
 run = [
     "mise outdated",
-    "brew outdated"
+    "apt list --upgradable"
 ]
 
 [tasks.up-all]
-description = "mise, Brewのパッケージを更新"
+description = "mise, aptのパッケージを更新"
 run = [
     "mise upgrade",
-    "brew upgrade"
+    "apt update",
+    "apt upgrade -y"
 ]
 
-[tasks.up-brew]
-description = "Brewのパッケージを更新"
-run = "brew upgrade"
+[tasks.up-apt]
+description = "aptのパッケージを更新"
+run = "apt update && apt upgrade -y"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
