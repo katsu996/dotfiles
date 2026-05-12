@@ -1,0 +1,60 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "lmstudio/glm46",
+
+  "provider": {
+    // ===============================
+    // LM Studio
+    // ===============================
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://localhost:1234/v1"
+      },
+      "models": {
+        "glm-4.6v-flash": {
+          "name": "zai-org/glm-4.6v-flash",
+          "tools": true
+        },
+        "qwen3.5-9b": {
+          "name": "qwen/qwen3.5-9b",
+          "tools": true
+        }
+      }
+    }
+  },
+
+  // ===============================
+  // エージェント分離（重要）
+  // ===============================
+  "agent": {
+    // 設計・要約・相談用
+    "chat": {
+      "description": "設計・要約・レビュー(GLM)",
+      "model": "lmstudio/glm-4.6v-flash",
+      "tools": {
+        "read": true,
+        "write": false,
+        "edit": false,
+        "bash": false,
+        "websearch": false,
+        "webfetch": false
+      }
+    },
+
+    // 実装・修正用
+    "build": {
+      "description": "実装・修正(Qwen)",
+      "model": "lmstudio/qwen3.5-9b",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "websearch": false,
+        "webfetch": false
+      }
+    }
+  }
+}

@@ -2,6 +2,10 @@
     {{ template "mise/darwin/mise-darwin-work.tmpl" . }}
 {{- else if and (eq .chezmoi.os "darwin") (eq .role "personal") -}}
     {{ template "mise/darwin/mise-darwin-personal.tmpl" . }}
+{{- else if and (eq .chezmoi.os "linux") (eq .role "work") -}}
+    {{ template "mise/linux/mise-linux-work.tmpl" . }}
+{{- else if and (eq .chezmoi.os "linux") (eq .role "personal") -}}
+    {{ template "mise/linux/mise-linux-personal.tmpl" . }}
 {{- else if and (eq .chezmoi.os "windows") (eq .role "work") -}}
     {{ template "mise/windows/mise-windows-work.tmpl" . }}
 {{- else if and (eq .chezmoi.os "windows") (eq .role "personal") -}}
