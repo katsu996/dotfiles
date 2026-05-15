@@ -53,13 +53,13 @@ run = [
 description = "mise, aptのパッケージを更新"
 run = [
     "mise upgrade",
-    "apt update",
-    "apt upgrade -y"
+    "sudo apt update",
+    "sudo apt upgrade -y"
 ]
 
 [tasks.up-apt]
 description = "aptのパッケージを更新"
-run = "apt update && apt upgrade -y"
+run = "sudo apt update && sudo apt upgrade -y"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
