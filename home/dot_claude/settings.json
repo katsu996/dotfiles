@@ -2,21 +2,41 @@
   "permissions": {
     "allow": [
       "mcp__serena",
-      "Bash(git:*)",
-      "Bash(gh:*)",
-      "Bash(ls:*)",
-      "Bash(find:*)",
-      "Bash(grep:*)",
-      "Bash(echo:*)",
-      "Bash(pnpm:*)",
-      "Bash(node:*)",
-      "Bash(ccusage:*)",
-      "Bash(tmux:*)",
+      "Bash(cd)",
+      "Bash(ls)",
+      "Bash(grep)",
+      "Bash(head)",
+      "Bash(tail)",
+      "Bash(cat)",
+      "Bash(echo)",
+      "Bash(sed)",
+      "Bash(cut)",
+      "Bash(du)",
+      "Bash(sleep)",
+      "Bash(base64)",
+      "Bash(rm)",
+      "Bash(git:log*)",
+      "Bash(git:diff*)",
+      "Bash(git:remote*)",
+      "Bash(git:pull*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:-f*)",
+      "Bash(gh:pr checkout*)",
+      "Bash(gh:pr view*)",
+      "Bash(gh:pr diff*)",
+      "Bash(gh:api*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:docs.anthropic.com)",
       "WebFetch(domain:stackoverflow.com)",
       "WebFetch(domain:ux.stackexchange.com)"
     ],
-    "deny": ["Bash(sudo:*)", "Bash(curl:*)", "Bash(rm -rf /)", "Bash(rm -rf ~)", "Bash(rm -rf ~/*)", "Bash(rm -rf /*)"]
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(curl:*)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf ~/*)",
+      "Bash(rm -rf /*)"
+    ]
   }
 }

@@ -1,0 +1,33 @@
+{
+  "terminalAllowlist": [
+    "cd",
+    "ls",
+    "grep",
+    "head",
+    "tail",
+    "cat",
+    "echo",
+    "sed",
+    "cut",
+    "du",
+    "sleep",
+    "base64",
+    "rm",
+    "git log",
+    "git diff",
+    "git remote",
+    "git pull",
+    "docker",
+    "docker-compose",
+    "gh pr checkout",
+    "gh pr view",
+    "gh pr diff",
+    "gh api"
+  ],
+  "autoRun": {
+    "block_instructions": [
+      "Block any command using sudo.",
+      "Block rm -rf /, rm -rf /*, rm -rf ~, and rm -rf ~/*."
+    ]
+  }
+}

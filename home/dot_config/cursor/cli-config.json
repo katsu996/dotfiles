@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(cd)",
+      "Shell(ls)",
+      "Shell(grep)",
+      "Shell(head)",
+      "Shell(tail)",
+      "Shell(cat)",
+      "Shell(echo)",
+      "Shell(sed)",
+      "Shell(cut)",
+      "Shell(du)",
+      "Shell(sleep)",
+      "Shell(base64)",
+      "Shell(rm)",
+      "Shell(git:log*)",
+      "Shell(git:diff*)",
+      "Shell(git:remote*)",
+      "Shell(git:pull*)",
+      "Shell(docker:*)",
+      "Shell(docker-compose:-f*)",
+      "Shell(gh:pr checkout*)",
+      "Shell(gh:pr view*)",
+      "Shell(gh:pr diff*)",
+      "Shell(gh:api*)"
+    ],
+    "deny": [
+      "Shell(sudo:*)",
+      "Shell(curl:*)",
+      "Shell(rm -rf /)",
+      "Shell(rm -rf ~)",
+      "Shell(rm -rf ~/*)",
+      "Shell(rm -rf /*)"
+    ]
+  }
+}
