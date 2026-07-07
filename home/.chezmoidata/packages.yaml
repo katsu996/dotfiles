@@ -11,8 +11,10 @@ packages:
         - ffmpeg
         - font-symbols-only-nerd-font
         - fzf
+        - gh
         - git
         - hadolint
+        - herdr
         - htop
         - imagemagick
         - jq
