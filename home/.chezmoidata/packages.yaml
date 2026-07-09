@@ -42,6 +42,7 @@ packages:
         - applite
         - apidog
         - claude
+        - claude-code
         - cursor
         - cursor-cli
         - diffmerge
@@ -143,6 +144,7 @@ packages:
         - Microsoft.VCLibs.Desktop.14
         - Microsoft.WindowsTerminal
         - evilmartians.lefthook
+        - Anthropic.ClaudeCode
       work:
         - Figma.Figma
         - Zoom.Zoom
