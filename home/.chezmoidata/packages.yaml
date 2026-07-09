@@ -42,7 +42,6 @@ packages:
         - applite
         - apidog
         - claude
-        - cmux
         - cursor
         - cursor-cli
         - diffmerge
