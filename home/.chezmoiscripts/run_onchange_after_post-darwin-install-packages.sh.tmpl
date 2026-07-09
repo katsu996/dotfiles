@@ -1,0 +1,9 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+## herdr の設定
+# インテグレーションをインストール
+herdr integration install claude
+herdr integration install cursor
+
+{{- end -}}
