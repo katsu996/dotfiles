@@ -1,4 +1,15 @@
 {{/* macOS Personal用の設定 */}}
+[settings]
+minimum_release_age = "1d"
+idiomatic_version_file_enable_tools = ["python"]
+experimental = true
+
+[settings.npm]
+package_manager = "aube"
+
+[settings.pipx]
+uvx = true
+
 [tools]
 "aqua:cli/cli" = "latest"
 bun = "latest"
@@ -6,7 +17,7 @@ deno = "latest"
 go = "latest"
 java = "24"
 node = "24"
-npm = "11"
+npm = "12"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@elgato/cli" = "latest"
 "npm:@fission-ai/openspec" = "latest"
@@ -27,18 +38,6 @@ zig = "latest"
 [tasks.cc]
 description = "Claude Code Bypass all permission checks"
 run = "claude --dangerously-skip-permissions"
-
-[tasks.cc-daily]
-description = "ccusage Daily token usage and costs"
-run = "ccusage daily"
-
-[tasks.cc-json]
-description = "ccusage Daily token usage and costs(Daily token usage and costs)"
-run = "ccusage daily --json"
-
-[tasks.cc-live]
-description = "ccusage Live monitoring"
-run = "ccusage blocks --live"
 
 [tasks.dot]
 description = "chezmoiを最新化"
@@ -65,10 +64,3 @@ run = [
 [tasks.up-brew]
 description = "Brewのパッケージを更新"
 run = "brew upgrade"
-
-[settings]
-idiomatic_version_file_enable_tools = ["python"]
-experimental = true
-
-[settings.pipx]
-uvx = true
