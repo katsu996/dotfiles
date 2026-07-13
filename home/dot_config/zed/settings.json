@@ -1,16 +1,17 @@
 {
   "base_keymap": "VSCode",
-  "icon_theme": "Catppuccin Macchiato",
-  "theme": "One Dark Pro",
+  "icon_theme": "Material Icon Theme",
+  "theme": "Tokyo Night",
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "tab_size": 2,
-  "buffer_font_family": "Menlo",
-  "buffer_font_fallbacks": ["Hiragino Sans", "Hiragino Kaku Gothic ProN"],
-  "ui_font_fallbacks": ["Hiragino Sans"],
+  "buffer_font_fallbacks": ["Noto Sans JP"],
+  "buffer_font_weight": 400,
+  "buffer_line_height": "comfortable",
   "project_panel": {
     "dock": "left",
     "git_status": true,
+    "bold_folder_labels": true,
   },
   "outline_panel": {
     "dock": "left",
@@ -34,6 +35,7 @@
     "inline_blame": {
       "enabled": true,
       "location": "inline",
+      "show_commit_summary": true,
     },
   },
   "tabs": {
@@ -41,12 +43,18 @@
     "git_status": true,
   },
   "scrollbar": {
-    "show": "auto",
+    "show": "always",
     "cursors": true,
     "git_diff": true,
     "search_results": true,
     "selected_text": true,
     "selected_symbol": true,
     "diagnostics": "all",
+  },
+  "minimap": {
+    "show": "always",
+    "thumb": "always",
+    "thumb_border": "left_open",
+    "current_line_highlight": null,
   },
 }
