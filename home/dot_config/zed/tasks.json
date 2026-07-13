@@ -1,0 +1,7 @@
+[
+  {
+    "label": "Example task",
+    "command": "echo hello",
+    "tags": []
+  }
+]
