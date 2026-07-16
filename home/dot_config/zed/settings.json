@@ -13,11 +13,17 @@
     "git_status": true,
     "bold_folder_labels": true,
   },
+  "title_bar": {
+    "show_branch_status_icon": true,
+  },
   "outline_panel": {
     "dock": "left",
   },
   "git_panel": {
     "dock": "left",
+    "tree_view": true,
+    "file_icons": true,
+    "show_count_badge": true,
   },
   "terminal": {
     "dock": "bottom",
