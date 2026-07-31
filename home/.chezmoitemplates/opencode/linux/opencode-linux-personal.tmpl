@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "lmstudio/glm46",
+  "model": "DeepSeek V4 Flash Free",
 
   "provider": {
     // ===============================
@@ -17,8 +17,8 @@
           "name": "zai-org/glm-4.6v-flash",
           "tools": true
         },
-        "qwen3.5-9b": {
-          "name": "qwen/qwen3.5-9b",
+        "DeepSeek V4 Flash Free": {
+          "name": "DeepSeek V4 Flash Free",
           "tools": true
         }
       }
@@ -31,7 +31,7 @@
   "agent": {
     // 設計・要約・相談用
     "chat": {
-      "description": "設計・要約・レビュー(GLM)",
+      "description": "設計・要約・レビュー(GLM 4.6)",
       "model": "lmstudio/glm-4.6v-flash",
       "tools": {
         "read": true,
@@ -45,8 +45,8 @@
 
     // 実装・修正用
     "build": {
-      "description": "実装・修正(Qwen)",
-      "model": "lmstudio/qwen3.5-9b",
+      "description": "実装・修正(DeepSeek V4 Flash)",
+      "model": "DeepSeek V4 Flash Free",
       "tools": {
         "read": true,
         "write": true,
