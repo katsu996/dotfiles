@@ -41,6 +41,11 @@ run = "chezmoi update --apply"
 description = "chezmoiを最新化"
 run = "chezmoi update --apply"
 
+[tasks.killPort]
+description = "指定ポートのプロセスを終了"
+usage = 'arg "<port>" help="終了するポート番号"'
+run = "kill -9 $(lsof -t -i:${usage_port?})"
+
 [tasks.o]
 description = "更新可能なパッケージを出力"
 run = [
