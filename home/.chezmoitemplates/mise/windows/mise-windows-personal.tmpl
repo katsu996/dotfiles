@@ -43,19 +43,19 @@ run = "chezmoi update --apply"
 description = "chezmoiを最新化"
 run = "chezmoi update --apply"
 
-[tasks.o]
-description = "更新可能なパッケージを出力"
-run = [
-    "mise outdated",
-    "winget upgrade"
-]
-
 [tasks.killPort]
 description = "指定ポートのプロセスを終了"
 usage = 'arg "<port>" help="終了するポート番号"'
 run = "Get-NetTCPConnection -LocalPort $env:usage_port -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id
 $_.OwningProcess -Force }"
 shell = "powershell -NoProfile -Command"
+
+[tasks.o]
+description = "更新可能なパッケージを出力"
+run = [
+    "mise outdated",
+    "winget upgrade"
+]
 
 [tasks.up-all]
 description = "mise, WinGetのパッケージを更新"
