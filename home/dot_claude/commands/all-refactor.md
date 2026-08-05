@@ -43,7 +43,7 @@
 
 1. **Branch & Commit:**
    - ブランチ作成: `refactor/codebase-optimization-[timestamp]`
-   - 全変更をコミット: メッセージは `refactor: codebase optimization and test updates`
+   - 全変更をコミット: メッセージは `refactor: コードベース全体の最適化とテスト更新`
    - リモートへプッシュ。
 
 2. **Pull Request Creation:**
