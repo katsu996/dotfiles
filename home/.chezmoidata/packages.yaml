@@ -10,6 +10,7 @@ packages:
         - fd
         - ffmpeg
         - font-symbols-only-nerd-font
+        - fresh-editor
         - fzf
         - gh
         - git
