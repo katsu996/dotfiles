@@ -18,6 +18,7 @@ packages:
         - htop
         - imagemagick
         - jq
+        - lazygit
         - lefthook
         - make
         - mise
