@@ -9,21 +9,7 @@ $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_blue)\
-$bun\
-$c\
-$cpp\
-$deno\
-$golang\
-$haskell\
-$java\
-$kotlin\
-$nodejs\
-$php\
-$python\
-$ruby\
-$rust\
-[ ](fg:color_blue)\
+[ ](fg:color_aqua)\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
@@ -51,71 +37,11 @@ format = '[[ $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 [git_status]
 style = "bg:color_aqua"
 format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
-
-[bun]
-symbol = "bun:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[c]
-symbol = "c:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[cpp]
-symbol = "cpp:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[deno]
-symbol = "deno:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[golang]
-symbol = "golang:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[haskell]
-symbol = "haskell:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[java]
-symbol = "java:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[kotlin]
-symbol = "kotlin:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[nodejs]
-symbol = "nodejs:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[php]
-symbol = "php:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[python]
-symbol = "python:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[ruby]
-symbol = "ruby:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[rust]
-symbol = "rust:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+modified = "!${count}"
 
 [line_break]
 disabled = false

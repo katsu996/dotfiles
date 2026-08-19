@@ -9,21 +9,7 @@ $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_blue)\
-$bun\
-$c\
-$cpp\
-$deno\
-$golang\
-$haskell\
-$java\
-$kotlin\
-$nodejs\
-$php\
-$python\
-$ruby\
-$rust\
-[ ](fg:color_blue)\
+[ ](fg:color_aqua)\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
@@ -44,13 +30,6 @@ format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-
 [git_branch]
 symbol = ""
 style = "bg:color_aqua"
@@ -59,71 +38,11 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 [git_status]
 style = "bg:color_aqua"
 format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
-
-[bun]
-symbol = "bun:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[c]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[cpp]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[deno]
-symbol = "deno:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[golang]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[haskell]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[java]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[kotlin]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[php]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[python]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[ruby]
-symbol = "ruby:"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[rust]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+modified = "!${count}"
 
 [line_break]
 disabled = false
@@ -135,4 +54,4 @@ error_symbol = '[](bold fg:color_red)'
 vimcmd_symbol = '[](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+vimcmd_visual_symbol = '
