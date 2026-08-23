@@ -1,6 +1,10 @@
 {{/* Windows Personal用の設定 */}}
 [settings]
 minimum_release_age = "1d"
+minimum_release_age_excludes = [
+  "npm:@katsu996/common-utils",
+  "npm:@katsu996/md2html"
+]
 minimum_release_age_excludes = ["npm:@katsu996/common-utils", "npm:@katsu996/md2html"]
 idiomatic_version_file_enable_tools = ["python"]
 experimental = true
@@ -19,8 +23,8 @@ node = "24"
 npm = "12"
 "npm:@elgato/cli" = "latest"
 "npm:@fission-ai/openspec" = "latest"
-"npm:@katsu996/common-utils" = "latest"
-"npm:@katsu996/md2html" = "latest"
+"npm:@katsu996/common-utils" = { version = "latest", npm_args = "--allow-scripts=@katsu996/common-utils" }
+"npm:@katsu996/md2html" = { version = "latest", npm_args = "--allow-scripts=@katsu996/md2html" }
 "npm:atcoder-cli" = "latest"
 "npm:cc-sdd" = "latest"
 "npm:hunkdiff" = "latest"
