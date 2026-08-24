@@ -66,6 +66,7 @@ packages:
         - orbstack
         - raycast
         - rectangle
+        - Sanyam-G/switch/switch
         - scroll-reverser
         - sequel-ace
         - stats
