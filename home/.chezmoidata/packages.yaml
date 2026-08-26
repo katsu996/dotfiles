@@ -44,7 +44,6 @@ packages:
         - applite
         - apidog
         - claude
-        - claude-code
         - codex
         - cursor
         - cursor-cli
