@@ -9,7 +9,7 @@ packages:
         - docker
         - fd
         - ffmpeg
-        - font-noto-sans-jp
+        - font-hack-nerd-font
         - fresh-editor
         - fzf
         - gh
