@@ -68,6 +68,7 @@ packages:
         - Sanyam-G/switch/switch
         - scroll-reverser
         - sequel-ace
+        - stablyai/orca/orca
         - stats
         - visual-studio-code
         - zed
