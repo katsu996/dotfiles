@@ -29,6 +29,10 @@ uv = "latest"
 yarn = "4"
 zig = "latest"
 
+[env]
+# mise外の自動更新を無効化
+DISABLE_AUTOUPDATER = "1"
+
 [tasks.cc]
 description = "Claude Code Bypass all permission checks"
 run = "claude --dangerously-skip-permissions"
