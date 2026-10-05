@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# zsh compinitのinsecure directories警告を解消する
+# brew操作で権限が戻ることがあるため、適用のたびに確認する
+if command -v zsh &>/dev/null; then
+    insecure_dirs=$(zsh -f -c 'autoload -Uz compaudit && compaudit' 2>/dev/null)
+    if [ -n "$insecure_dirs" ]; then
+        echo "Fixing insecure directories for zsh compinit..."
+        echo "$insecure_dirs" | xargs chmod go-w
+    fi
+fi
+{{- end -}}
