@@ -79,35 +79,52 @@ chezmoi apply
 
 ## 開発環境
 
-| 項目            | Windows                          | Mac                     |
-|-----------------|----------------------------------|-------------------------|
-| シェル            | clink                            | zsh                     |
-| ターミナル         | Windows Terminal<br>Ghostty(予定) | Ghostty                 |
-| エディタ           | VSCode                           | VSCode<br>cursor<br>zed |
-| ウィンドウマネージャー | -                                | Rectangle + AltTab       |
-| プロンプト         | Starship                         | Starship                 |
-| パッケージマネージャー | WinGet<br>UnigetUI              | Homebrew                 |
-| バージョンマネージャー | Volta → mise                    | mise                     |
-| ブラウザ           | Chrome                          | Chrome                   |
-| 開発ツール        | Notion<br>Obsidian               | Notion                  |
-| ランチャー         | Raycast(予定)                    | Raycast                  |
-| Docker          | Docker Desktop                   | OrbStack                |
-| DBツール          | A5:SQL Mk-2                      | Sequel Ace              |
+| 項目                   | Windows            | Mac                |
+| ---------------------- | ------------------ | ------------------ |
+| シェル                 | clink              | zsh                |
+| ターミナル             | Windows Terminal   | Ghostty            |
+| エディタ               | Cursor<br>Zed      | Cursor<br>Zed      |
+| ウィンドウマネージャー | -                  | Rectangle + AltTab |
+| プロンプト             | Starship           | Starship           |
+| パッケージマネージャー | WinGet<br>UnigetUI | Homebrew           |
+| バージョンマネージャー | mise               | mise               |
+| ブラウザ               | Chrome             | Chrome             |
+| 開発ツール             | Notion             | Notion             |
+| ランチャー             | Raycast            | Raycast            |
+| Docker                 | Docker Desktop     | OrbStack           |
+| DBツール               | A5:SQL Mk-2        | Sequel Ace         |
 
 ## ディレクトリ構成
 
+`.chezmoiroot` が `home` のため、chezmoi のソースルートは `home/`。
+`other_dot_config/` と `settingBackup/` は chezmoi 管理外の手動バックアップ。
+
 ```
 chezmoi/
-├───.claude/...
-├───.vscode/...
-├───home/...
-├───other_dot_config/...
-├───settingBackup/...
-├───.chezmoi.toml.tmpl
-├───.chezmoiignore
-├───.chezmoiroot
-├───.gitignore
-└───README.md
+├── .claude/
+│   └── settings.json       # Claude Code 設定 (root側)
+├── .vscode/
+│   └── extensions.json     # 推奨拡張機能
+├── home/                   # ← chezmoi ソースルート
+│   ├── .chezmoidata/       # brew/cask/winget パッケージ定義
+│   ├── .chezmoiscripts/    # パッケージ導入スクリプト (darwin/windows)
+│   ├── .chezmoitemplates/  # mise/starship/opencode 雛形 (OS×role)
+│   ├── dot_claude/         # → ~/.claude
+│   ├── dot_config/         # → ~/.config
+│   ├── AGENTS.md
+│   ├── dot_gitconfig.tmpl
+│   ├── dot_zshrc
+│   └── private_dot_npmrc
+├── other_dot_config/       # 管理外: Rectangle, HHKB Studio
+├── settingBackup/          # 管理外: yabai, skhd
+├── .chezmoi.toml.tmpl      # chezmoi init 時のプロンプト (email/name/role)
+├── .chezmoiignore          # OS別適用除外
+├── .chezmoiroot            # ソースルート (= home)
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── AGENTS.md               # エージェント向け運用規約
+└── README.md
 ```
 
 ## Mac キーマッピング
@@ -115,19 +132,19 @@ chezmoi/
 ### HHKB
 
 | Windows | Mac変更後 | Macデフォルト |
-|------|------|------|
-| CTRL | Command | Control |
-| Windows| Option | Command |
-| ALT| Control | Option |
+| ------- | --------- | ------------- |
+| CTRL    | Command   | Control       |
+| Windows | Option    | Command       |
+| ALT     | Control   | Option        |
 
 ### Mac内蔵キーボード
 
-| デフォルト| 変更後 |
-|------|------|
-| Caps Lock |Command |
-| Control | Caps Lock |
-| Option | Option |
-| Command | Control |
+| デフォルト | 変更後    |
+| ---------- | --------- |
+| Caps Lock  | Command   |
+| Control    | Caps Lock |
+| Option     | Option    |
+| Command    | Control   |
 
 ### Raycast
 
