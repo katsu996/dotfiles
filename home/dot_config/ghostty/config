@@ -1,6 +1,9 @@
 # テーマ
 theme = "GitHub Dark Default"
 
+# フォント
+font-family = "Hack Nerd Font"
+
 # 背景の透明度
 background-opacity = 0.8
 # 背景をぼかす
