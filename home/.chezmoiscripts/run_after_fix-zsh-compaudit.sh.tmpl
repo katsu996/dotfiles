@@ -3,11 +3,18 @@
 
 # zsh compinitのinsecure directories警告を解消する
 # brew操作で権限が戻ることがあるため、適用のたびに確認する
-if command -v zsh &>/dev/null; then
-    insecure_dirs=$(zsh -f -c 'autoload -Uz compaudit && compaudit' 2>/dev/null)
+# .zshrcと同じfpath条件で検査する（zsh -f単体ではbrew側が見えない）
+if command -v zsh &>/dev/null && command -v brew &>/dev/null; then
+    brew_share="$(brew --prefix)/share"
+    insecure_dirs=$(BREW_SHARE="$brew_share" zsh -f -c 'fpath=($BREW_SHARE/zsh-completions $BREW_SHARE/zsh/site-functions $fpath); autoload -Uz compaudit && compaudit' 2>/dev/null)
     if [ -n "$insecure_dirs" ]; then
         echo "Fixing insecure directories for zsh compinit..."
-        echo "$insecure_dirs" | xargs chmod go-w
+        if echo "$insecure_dirs" | xargs chmod go-w 2>/dev/null; then
+            echo "✅ Fixed."
+        else
+            echo "権限不足のため自動修正できませんでした。以下を実行してください:"
+            echo "$insecure_dirs" | xargs echo sudo chmod go-w
+        fi
     fi
 fi
 {{- end -}}
