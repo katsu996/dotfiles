@@ -9,7 +9,6 @@ packages:
         - docker
         - fd
         - ffmpeg
-        - font-hack-nerd-font
         - fresh-editor
         - fzf
         - gh
@@ -46,8 +45,8 @@ packages:
         - codex
         - cursor
         - cursor-cli
-        - diffmerge
         - dockdoor
+        - font-hack-nerd-font
         - font-jetbrains-mono-nerd-font
         - ghostty
         - github
