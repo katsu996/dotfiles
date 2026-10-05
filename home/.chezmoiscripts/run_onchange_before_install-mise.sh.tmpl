@@ -1,0 +1,18 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# miseが公式バイナリでインストールされていない場合は、インストールする
+# Homebrew版は公式の最適化ビルドより遅く・大きいため、mise.runを使用する
+# https://mise.jdx.dev/installing-mise.html
+if [ ! -x "$HOME/.local/bin/mise" ]; then
+    echo "Installing mise..."
+    curl -fsSL https://mise.run | sh
+    echo "✅ mise installed successfully."
+fi
+
+# 公式バイナリがあるのにHomebrew版が残っている場合は削除する
+if [ -x "$HOME/.local/bin/mise" ] && command -v brew &>/dev/null && brew list mise &>/dev/null; then
+    echo "Removing Homebrew mise..."
+    brew uninstall mise
+fi
+{{- end -}}

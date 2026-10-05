@@ -22,7 +22,6 @@ packages:
         - lazygit
         - lefthook
         - make
-        - mise
         - poppler
         - resvg
         - ripgrep
