@@ -84,54 +84,28 @@ packages:
   windows:
     wingets:
       common:
+        # 棚卸し方針: EOL済みは削除、言語ランタイムはmise管理に一本化、Store依存は自動解決のため除外
         - 7zip.7zip
         - Docker.DockerDesktop
         - Git.Git
         - Logitech.LogiBolt
-        - Logitech.Options
         - Notepad++.Notepad++
         - WinMerge.WinMerge
-        - Microsoft.VCRedist.2010.x64
-        - Microsoft.VCRedist.2008.x64
-        - Microsoft.VCRedist.2005.x64
         - Logitech.OptionsPlus
         - Google.JapaneseIME
         - Adobe.Acrobat.Reader.64-bit
         - Starship.Starship
         - Oracle.JDK.17
-        - Microsoft.VisualStudio.2019.BuildTools
-        - Google.Chrome.EXE
-        - Microsoft.Azure.StorageEmulator
-        - Microsoft.Edge
+        - Google.Chrome.EXE # EXEインストーラ版 (Google.Chrome はMSI版)。どちらも有効なID
         - chrisant996.Clink
         - Microsoft.VisualStudio.2022.BuildTools
-        - Microsoft.VCRedist.2013.x64
         - Microsoft.DotNet.Runtime.8
-        - Microsoft.DotNet.DesktopRuntime.6
-        - Microsoft.DotNet.DesktopRuntime.5
-        - Microsoft.VCRedist.2015+.x86
-        - Microsoft.DotNet.DesktopRuntime.3
-        - Microsoft.WindowsInstallationAssistant
-        - Microsoft.DotNet.Runtime.7
-        - Microsoft.DotNet.Runtime.6
-        - Microsoft.VCRedist.2012.x86
-        - Microsoft.DotNet.DesktopRuntime.7
-        - Microsoft.DotNet.SDK.9
-        - Microsoft.DotNet.AspNetCore.6
+        - Microsoft.VCRedist.2015+.x86 # 2005-2013は削除。2015+パッケージが2015-2022をカバー
+        - Microsoft.DotNet.SDK.9 # 8/9は2026-11-10にサポート終了。次は .NET 10 LTS へ移行
         - Microsoft.DotNet.DesktopRuntime.8
-        - Microsoft.DotNet.AspNetCore.7
-        - Microsoft.VCRedist.2005.x86
         - Microsoft.PowerShell
-        - Microsoft.DotNet.Runtime.3_1
-        - Microsoft.VCRedist.2008.x86
-        - Microsoft.VCRedist.2013.x86
         - Google.ChromeRemoteDesktopHost
-        - Microsoft.VCRedist.2010.x86
-        - Microsoft.DotNet.AspNetCore.3_1
-        - Microsoft.VCRedist.2012.x64
         - Microsoft.VCRedist.2015+.x64
-        - Microsoft.DotNet.AspNetCore.5
-        - Microsoft.DotNet.SDK.3_1
         - Notion.Notion
         - Anthropic.Claude
         - Postman.Postman
@@ -140,12 +114,7 @@ packages:
         - SlackTechnologies.Slack
         - twpayne.chezmoi
         - Microsoft.VisualStudioCode
-        - Python.Python.3.9
         - Canonical.Ubuntu
-        - Microsoft.AppInstaller
-        - Microsoft.UI.Xaml.2.7
-        - Microsoft.UI.Xaml.2.8
-        - Microsoft.VCLibs.Desktop.14
         - Microsoft.WindowsTerminal
         - evilmartians.lefthook
         - Anthropic.ClaudeCode
