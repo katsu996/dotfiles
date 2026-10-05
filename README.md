@@ -5,6 +5,26 @@
 
 ## 初期セットアップ
 
+### Homebrewをインストール（macOSのみ）
+
+初期状態のmacOSにはHomebrewが入っていないため、先にインストールする。
+
+```Bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Apple Silicon Macの場合は、インストール後にPATHを通す。
+
+```Bash
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+インストールできたか確認する。
+
+```Bash
+brew --version
+```
+
 ### chezmoiをインストール
 
 以下のコマンドを実行して`chezmoi`をインストール
