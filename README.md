@@ -43,25 +43,55 @@ winget install twpayne.chezmoi
 
 ### dotfilesの初期化と適用
 
-ドットファイルを初期化し適用する。
-以下のコマンドを実行し、プロンプトが表示されたら**workまたはpersonal**と入力する。
+以下のコマンドを実行する。`email`・`name`・`role`は引数で渡すためプロンプトは表示されない。
+`init`はclone→設定ファイル生成→適用の順に実行される。
 
 ```Bash
-chezmoi init --apply katsu996/dotfiles.git
+chezmoi init --apply katsu996/dotfiles --promptString email=firstname.lastname@example.com,name=firstname.lastname,role=work
 ```
 
-プロンプトが表示されずinitされてしまった場合は、手動で`~/.config/chezmoi/chezmoi.toml`ファイルを作成して以下を入力する。
+`role`は**workまたはpersonal**のいずれかを指定する。設定ファイルを確認する。
 
 ```Bash
-touch ~/.config/chezmoi/chezmoi.toml
-vi ~/.config/chezmoi/chezmoi.toml
+cat ~/.config/chezmoi/chezmoi.toml
 ```
 
-```toml
+引数を省略した場合は対話式プロンプト（`email`・`name`・`role`）が表示される。
+
+#### `map has no entry for key "role"`が出る場合
+
+原因は`~/.config/chezmoi/chezmoi.toml`の`[data]`に`role`が無いこと。
+すでにinit済みの環境では、リポジトリを更新して`chezmoi init`を再実行すると設定ファイルを作り直せる。
+
+```Bash
+chezmoi update
+chezmoi init --promptString email=firstname.lastname@example.com,name=firstname.lastname,role=work
+cat ~/.config/chezmoi/chezmoi.toml
+```
+
+プロンプトが表示されない場合は手動で作り直す。
+`~/.config/chezmoi`ディレクトリが存在しないと`No such file or directory`になるため、先に`mkdir -p`を実行する。
+
+```Bash
+mkdir -p ~/.config/chezmoi
+cat > ~/.config/chezmoi/chezmoi.toml <<'EOF'
 [data]
     email = "firstname.lastname@example.com"
     name = "firstname.lastname"
-    role = "work or personal"
+    role = "work"
+EOF
+```
+
+`role`は**workまたはpersonal**のいずれかを入力する。作成できたか確認する。
+
+```Bash
+cat ~/.config/chezmoi/chezmoi.toml
+```
+
+確認後に再適用する。
+
+```Bash
+chezmoi apply
 ```
 
 ### chezmoiの日常的な使用
@@ -134,10 +164,10 @@ chezmoi/
 │   ├── AGENTS.md
 │   ├── dot_gitconfig.tmpl
 │   ├── dot_zshrc
-│   └── private_dot_npmrc
+│   ├── private_dot_npmrc
+│   └── .chezmoi.toml.tmpl # chezmoi init 時のプロンプト (email/name/role)
 ├── other_dot_config/       # 管理外: Rectangle, HHKB Studio
 ├── settingBackup/          # 管理外: yabai, skhd
-├── .chezmoi.toml.tmpl      # chezmoi init 時のプロンプト (email/name/role)
 ├── .chezmoiignore          # OS別適用除外
 ├── .chezmoiroot            # ソースルート (= home)
 ├── .editorconfig

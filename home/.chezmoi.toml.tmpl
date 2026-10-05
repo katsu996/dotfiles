@@ -1,6 +1,6 @@
 # -*-mode:conf-toml-*- vim:ft=toml
 
-# ~/.local/share/chezmoi/.chezmoi.toml.tmpl
+# ~/.local/share/chezmoi/home/.chezmoi.toml.tmpl
 # =============================================================================
 # Used to customize configuration when doing a `chezmoi init`.
 #
@@ -11,9 +11,13 @@
 #
 # {{- /* This file supports Go's text/template language. */}}
 
-# {{- $email := promptString "Git email address for the author/committer" }}
-# {{- $name := promptString "Git username for the author/committer" }}
-# {{- $role := promptString "Role for this machine (e.g. work, personal)" "personal" }}
+# Values can be supplied non-interactively via `chezmoi init --promptString`,
+# e.g. --promptString email=mail@example.com,name=firstname.lastname,role=work
+# Keys must match the prompt texts below and must not contain commas.
+
+# {{- $email := promptString "email" }}
+# {{- $name := promptString "name" }}
+# {{- $role := promptString "role" "personal" }}
 
 [data]
     email = "{{ $email }}"
