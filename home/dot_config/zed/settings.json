@@ -5,30 +5,28 @@
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "tab_size": 2,
-  "buffer_font_fallbacks": [
-    "Noto Sans JP"
-  ],
+  "buffer_font_fallbacks": ["Noto Sans JP"],
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
   "project_panel": {
     "dock": "left",
     "git_status": true,
-    "bold_folder_labels": true,
+    "bold_folder_labels": true
   },
   "title_bar": {
-    "show_branch_status_icon": true,
+    "show_branch_status_icon": true
   },
   "outline_panel": {
-    "dock": "left",
+    "dock": "left"
   },
   "git_panel": {
     "dock": "left",
     "tree_view": true,
     "file_icons": true,
-    "show_count_badge": true,
+    "show_count_badge": true
   },
   "terminal": {
-    "dock": "bottom",
+    "dock": "bottom"
   },
   "autosave": "on_focus_change",
   "format_on_save": "on",
@@ -37,18 +35,18 @@
   "confirm_quit": true,
   "restore_on_startup": "last_session",
   "inlay_hints": {
-    "enabled": true,
+    "enabled": true
   },
   "git": {
     "inline_blame": {
       "enabled": true,
       "location": "inline",
-      "show_commit_summary": true,
-    },
+      "show_commit_summary": true
+    }
   },
   "tabs": {
     "file_icons": true,
-    "git_status": true,
+    "git_status": true
   },
   "scrollbar": {
     "show": "always",
@@ -57,12 +55,12 @@
     "search_results": true,
     "selected_text": true,
     "selected_symbol": true,
-    "diagnostics": "all",
+    "diagnostics": "all"
   },
   "minimap": {
     "show": "always",
     "thumb": "always",
     "thumb_border": "left_open",
-    "current_line_highlight": null,
-  },
+    "current_line_highlight": null
+  }
 }

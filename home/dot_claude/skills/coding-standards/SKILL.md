@@ -11,31 +11,31 @@ description: TypeScript、JavaScript、React、Node.js開発のための汎用�
 
 ### 1. 可読性優先
 
-* コードは書くよりも読まれることが多い
-* 明確な変数名と関数名
-* コメントよりも自己文書化コードを優先
-* 一貫したフォーマット
+- コードは書くよりも読まれることが多い
+- 明確な変数名と関数名
+- コメントよりも自己文書化コードを優先
+- 一貫したフォーマット
 
 ### 2. KISS (Keep It Simple, Stupid)
 
-* 機能する最もシンプルなソリューションを採用
-* 過剰設計を避ける
-* 早すぎる最適化を避ける
-* 理解しやすさ > 巧妙なコード
+- 機能する最もシンプルなソリューションを採用
+- 過剰設計を避ける
+- 早すぎる最適化を避ける
+- 理解しやすさ > 巧妙なコード
 
 ### 3. DRY (Don't Repeat Yourself)
 
-* 共通ロジックを関数に抽出
-* 再利用可能なコンポーネントを作成
-* ユーティリティ関数をモジュール間で共有
-* コピー&ペーストプログラミングを避ける
+- 共通ロジックを関数に抽出
+- 再利用可能なコンポーネントを作成
+- ユーティリティ関数をモジュール間で共有
+- コピー&ペーストプログラミングを避ける
 
 ### 4. YAGNI (You Aren't Gonna Need It)
 
-* 必要ない機能を事前に構築しない
-* 推測的な一般化を避ける
-* 必要なときのみ複雑さを追加
-* シンプルに始めて、必要に応じてリファクタリング
+- 必要ない機能を事前に構築しない
+- 推測的な一般化を避ける
+- 必要なときのみ複雑さを追加
+- シンプルに始めて、必要に応じてリファクタリング
 
 ## TypeScript/JavaScript標準
 
@@ -43,28 +43,28 @@ description: TypeScript、JavaScript、React、Node.js開発のための汎用�
 
 ```typescript
 // PASS: GOOD: Descriptive names
-const marketSearchQuery = 'election'
-const isUserAuthenticated = true
-const totalRevenue = 1000
+const marketSearchQuery = "election";
+const isUserAuthenticated = true;
+const totalRevenue = 1000;
 
 // FAIL: BAD: Unclear names
-const q = 'election'
-const flag = true
-const x = 1000
+const q = "election";
+const flag = true;
+const x = 1000;
 ```
 
 ### 関数の命名
 
 ```typescript
 // PASS: GOOD: Verb-noun pattern
-async function fetchMarketData(marketId: string) { }
-function calculateSimilarity(a: number[], b: number[]) { }
-function isValidEmail(email: string): boolean { }
+async function fetchMarketData(marketId: string) {}
+function calculateSimilarity(a: number[], b: number[]) {}
+function isValidEmail(email: string): boolean {}
 
 // FAIL: BAD: Unclear or noun-only
-async function market(id: string) { }
-function similarity(a, b) { }
-function email(e) { }
+async function market(id: string) {}
+function similarity(a, b) {}
+function email(e) {}
 ```
 
 ### 不変性パターン（重要）
@@ -73,14 +73,14 @@ function email(e) { }
 // PASS: ALWAYS use spread operator
 const updatedUser = {
   ...user,
-  name: 'New Name'
-}
+  name: "New Name",
+};
 
-const updatedArray = [...items, newItem]
+const updatedArray = [...items, newItem];
 
 // FAIL: NEVER mutate directly
-user.name = 'New Name'  // BAD
-items.push(newItem)     // BAD
+user.name = "New Name"; // BAD
+items.push(newItem); // BAD
 ```
 
 ### 型安全性
@@ -88,10 +88,10 @@ items.push(newItem)     // BAD
 ```typescript
 // PASS: GOOD: Proper types
 interface Market {
-  id: string
-  name: string
-  status: 'active' | 'resolved' | 'closed'
-  created_at: Date
+  id: string;
+  name: string;
+  status: "active" | "resolved" | "closed";
+  created_at: Date;
 }
 
 function getMarket(id: string): Promise<Market> {
@@ -144,13 +144,13 @@ export function Button(props) {
 
 ```typescript
 // PASS: GOOD: Proper state updates
-const [count, setCount] = useState(0)
+const [count, setCount] = useState(0);
 
 // Functional update for state based on previous state
-setCount(prev => prev + 1)
+setCount((prev) => prev + 1);
 
 // FAIL: BAD: Direct state reference
-setCount(count + 1)  // Can be stale in async scenarios
+setCount(count + 1); // Can be stale in async scenarios
 ```
 
 ## API設計標準
@@ -187,22 +187,22 @@ types/market.types.ts         # 型定義は .types サフィックス付き cam
 ```typescript
 // PASS: GOOD: Explain WHY, not WHAT
 // Use exponential backoff to avoid overwhelming the API during outages
-const delay = Math.min(1000 * Math.pow(2, retryCount), 30000)
+const delay = Math.min(1000 * Math.pow(2, retryCount), 30000);
 
 // Deliberately using mutation here for performance with large arrays
-items.push(newItem)
+items.push(newItem);
 
 // FAIL: BAD: Stating the obvious
 // Increment counter by 1
-count++
+count++;
 
 // Set name to user's name
-name = user.name
+name = user.name;
 ```
 
 ### パブリックAPIのJSDoc
 
-````typescript
+```typescript
 /**
  * Searches markets using semantic similarity.
  *
@@ -213,28 +213,28 @@ name = user.name
  */
 export async function searchMarkets(
   query: string,
-  limit: number = 10
+  limit: number = 10,
 ): Promise<Market[]> {
   // Implementation
 }
-````
+```
 
 ## パフォーマンスベストプラクティス
 
 ### メモ化
 
 ```typescript
-import { useMemo, useCallback } from 'react'
+import { useMemo, useCallback } from "react";
 
 // PASS: GOOD: Memoize expensive computations
 const sortedMarkets = useMemo(() => {
-  return markets.sort((a, b) => b.volume - a.volume)
-}, [markets])
+  return markets.sort((a, b) => b.volume - a.volume);
+}, [markets]);
 
 // PASS: GOOD: Memoize callbacks
 const handleSearch = useCallback((query: string) => {
-  setSearchQuery(query)
-}, [])
+  setSearchQuery(query);
+}, []);
 ```
 
 ### 遅延読み込み
@@ -268,9 +268,9 @@ function processMarketData() {
 
 // PASS: GOOD: Split into smaller functions
 function processMarketData() {
-  const validated = validateData()
-  const transformed = transformData(validated)
-  return saveData(transformed)
+  const validated = validateData();
+  const transformed = transformData(validated);
+  return saveData(transformed);
 }
 ```
 
@@ -291,11 +291,11 @@ if (user) {
 }
 
 // PASS: GOOD: Early returns
-if (!user) return
-if (!user.isAdmin) return
-if (!market) return
-if (!market.isActive) return
-if (!hasPermission) return
+if (!user) return;
+if (!user.isAdmin) return;
+if (!market) return;
+if (!market.isActive) return;
+if (!hasPermission) return;
 
 // Do something
 ```
@@ -304,15 +304,17 @@ if (!hasPermission) return
 
 ```typescript
 // FAIL: BAD: Unexplained numbers
-if (retryCount > 3) { }
-setTimeout(callback, 500)
+if (retryCount > 3) {
+}
+setTimeout(callback, 500);
 
 // PASS: GOOD: Named constants
-const MAX_RETRIES = 3
-const DEBOUNCE_DELAY_MS = 500
+const MAX_RETRIES = 3;
+const DEBOUNCE_DELAY_MS = 500;
 
-if (retryCount > MAX_RETRIES) { }
-setTimeout(callback, DEBOUNCE_DELAY_MS)
+if (retryCount > MAX_RETRIES) {
+}
+setTimeout(callback, DEBOUNCE_DELAY_MS);
 ```
 
 **覚えておいてください**: コード品質は妥協できません。明確で保守可能なコードにより、迅速な開発と自信を持ったリファクタリングが可能になります。

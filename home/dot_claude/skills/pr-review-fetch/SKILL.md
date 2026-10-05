@@ -157,16 +157,18 @@ query($owner: String!, $name: String!, $number: Int!, $after: String!) {
 
 ## レビュー状態
 
-| レビュアー | 状態 | 日時 |
-|-----------|------|------|
-| {author}  | {state} | {submittedAt} |
+| レビュアー | 状態    | 日時          |
+| ---------- | ------- | ------------- |
+| {author}   | {state} | {submittedAt} |
 
 ## 未解決スレッド — 未返信（自分の対応待ち）({N}件)
 
 スレッド内の最後のコメント投稿者が自分（viewer.login）以外のスレッド。
 
 ### {path}:{line}
+
 **{author}** ({createdAt})
+
 > {body}
 
 ## 未解決スレッド — 返信済み（相手の対応待ち）({N}件)
@@ -174,7 +176,9 @@ query($owner: String!, $name: String!, $number: Int!, $after: String!) {
 スレッド内の最後のコメント投稿者が自分（viewer.login）のスレッド。
 
 ### {path}:{line}
+
 **{author}** ({createdAt})
+
 > {body}
 
 ## 解決済みスレッド ({M}件)
@@ -183,9 +187,11 @@ query($owner: String!, $name: String!, $number: Int!, $after: String!) {
 <summary>{path}:{line} - {最初のコメントの冒頭30文字}...</summary>
 
 **{author}** ({createdAt})
+
 > {body}
 
 **{reply_author}** ({reply_createdAt})
+
 > {reply_body}
 
 </details>
@@ -266,14 +272,15 @@ Phase A を実行した場合:
 
 ## 未解決コメント一覧
 
-| No | ID | レビュアー | ファイル | コメント概要 | 妥当性 | 修正要否 |
-|----|-----|-----------|---------|-------------|--------|---------|
-| 1  | {databaseId} | {author} | {path}:{line} | {コメント冒頭40文字} | 妥当 | 要修正 |
-| 2  | {databaseId} | {author} | {path}:{line} | {コメント冒頭40文字} | 対応不要 | 修正不要 |
+| No  | ID           | レビュアー | ファイル      | コメント概要         | 妥当性   | 修正要否 |
+| --- | ------------ | ---------- | ------------- | -------------------- | -------- | -------- |
+| 1   | {databaseId} | {author}   | {path}:{line} | {コメント冒頭40文字} | 妥当     | 要修正   |
+| 2   | {databaseId} | {author}   | {path}:{line} | {コメント冒頭40文字} | 対応不要 | 修正不要 |
 
 ## 各コメントの詳細評価
 
 ### No.1 — {path}:{line}
+
 - **レビュアー**: {author}
 - **コメント ID**: {databaseId}
 - **コメント内容**:
@@ -325,6 +332,7 @@ No ごとに以下を出力する:
 
 ```markdown
 ### No.X — {path}:{line} への返信
+
 **宛先**: @{reviewer}
 
 {返信メッセージ本文}
