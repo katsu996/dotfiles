@@ -69,6 +69,7 @@ packages:
         - sequel-ace
         - stablyai/orca/orca
         - stats
+        - thebrowsercompany-dia
         - visual-studio-code
         - zed
       work:
