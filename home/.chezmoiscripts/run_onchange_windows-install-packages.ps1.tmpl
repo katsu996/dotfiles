@@ -7,6 +7,19 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "WinGet installation request sent. You may need to restart the terminal."
 }
 
+# 指定パッケージを新規インストールし、導入済みならアップグレードする
+# install のみだと既存パッケージが更新されないため、upgrade を併用する
+# -1978335189 (0x8A150014) は「更新なし」のため正常扱いで無視する
+function Ensure-WingetPackage {
+    param([string]$Id)
+    Write-Host "Ensuring $Id with WinGet..."
+    winget install -e --id "$Id" --silent --accept-source-agreements --accept-package-agreements
+    winget upgrade -e --id "$Id" --silent --accept-source-agreements --accept-package-agreements
+    if (($LASTEXITCODE -ne 0) -and ($LASTEXITCODE -ne -1978335189)) {
+        Write-Warning "Failed to install/upgrade $Id (exit code $LASTEXITCODE)"
+    }
+}
+
 # WinGetを使用して共通パッケージをインストールする
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying common WinGet packages..."
@@ -16,8 +29,7 @@ if ((Get-Command winget -ErrorAction SilentlyContinue)) {
         {{- end -}}
     )
     foreach ($package in $winget_common_packages) {
-        Write-Host "Installing $package with WinGet..."
-        winget install --id $package --silent --accept-source-agreements --accept-package-agreements
+        Ensure-WingetPackage -Id $package
     }
 }
 
@@ -38,8 +50,7 @@ if ((Get-Command winget -ErrorAction SilentlyContinue)) {
 
     if ($winget_role_packages.Count -gt 0) {
         foreach ($package in $winget_role_packages) {
-            Write-Host "Installing $package with WinGet..."
-            winget install --id $package --silent --accept-source-agreements --accept-package-agreements
+            Ensure-WingetPackage -Id $package
         }
     } else {
         Write-Host "No role-specific packages to install."

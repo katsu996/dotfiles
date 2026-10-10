@@ -105,6 +105,7 @@ packages:
         - Microsoft.DotNet.DesktopRuntime.8
         - Microsoft.PowerShell
         - Google.ChromeRemoteDesktopHost
+        - HopToDesk.HopToDesk
         - Microsoft.VCRedist.2015+.x64
         - Notion.Notion
         - Anthropic.Claude
@@ -129,7 +130,7 @@ packages:
         - CrystalDewWorld.CrystalDiskInfo
         - CrystalDewWorld.CrystalDiskMark
         - Kairos.DuetDisplay
-        - Google.PlayGames.Beta
+        - Google.PlayGames
         - Mozilla.Firefox.ja
         - Mozilla.Thunderbird.ja
         - Surfshark.Surfshark
