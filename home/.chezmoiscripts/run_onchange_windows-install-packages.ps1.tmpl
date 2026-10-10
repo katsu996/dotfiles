@@ -13,8 +13,8 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 function Ensure-WingetPackage {
     param([string]$Id)
     Write-Host "Ensuring $Id with WinGet..."
-    winget install -e --id "$Id" --silent --accept-source-agreements --accept-package-agreements
-    winget upgrade -e --id "$Id" --silent --accept-source-agreements --accept-package-agreements
+    winget install -e --id "$Id" --source winget --silent --accept-source-agreements --accept-package-agreements
+    winget upgrade -e --id "$Id" --source winget --silent --accept-source-agreements --accept-package-agreements
     if (($LASTEXITCODE -ne 0) -and ($LASTEXITCODE -ne -1978335189)) {
         Write-Warning "Failed to install/upgrade $Id (exit code $LASTEXITCODE)"
     }
@@ -24,9 +24,9 @@ function Ensure-WingetPackage {
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying common WinGet packages..."
     $winget_common_packages = @(
-        {{- range .packages.windows.wingets.common -}}
+{{- range .packages.windows.wingets.common }}
                 '{{ . }}'
-        {{- end -}}
+{{- end }}
     )
     foreach ($package in $winget_common_packages) {
         Ensure-WingetPackage -Id $package
@@ -37,15 +37,15 @@ if ((Get-Command winget -ErrorAction SilentlyContinue)) {
 if ((Get-Command winget -ErrorAction SilentlyContinue)) {
     Write-Host "Applying role-specific WinGet packages..."
     $winget_role_packages = @(
-        {{- if eq .role "work" -}}
-            {{- range .packages.windows.wingets.work -}}
+{{- if eq .role "work" }}
+{{- range .packages.windows.wingets.work }}
                     '{{ . }}'
-            {{- end -}}
-        {{- else if eq .role "personal" -}}
-            {{- range .packages.windows.wingets.personal -}}
+{{- end }}
+{{- else if eq .role "personal" }}
+{{- range .packages.windows.wingets.personal }}
                     '{{ . }}'
-            {{- end -}}
-        {{- end -}}
+{{- end }}
+{{- end }}
     )
 
     if ($winget_role_packages.Count -gt 0) {
