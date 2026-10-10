@@ -77,3 +77,22 @@ run = [
 [tasks.up-brew]
 description = "Brewのパッケージを更新"
 run = "brew upgrade"
+
+[tasks.in-brew]
+description = "Brewの未導入パッケージをインストール"
+run = """
+brew bundle --file=/dev/stdin <<EOF
+{{- range .packages.darwin.brews.common }}
+brew {{ . | quote }}
+{{- end }}
+{{- range .packages.darwin.casks.common }}
+cask {{ . | quote }}
+{{- end }}
+{{- range .packages.darwin.brews.personal }}
+brew {{ . | quote }}
+{{- end }}
+{{- range .packages.darwin.casks.personal }}
+cask {{ . | quote }}
+{{- end }}
+EOF
+"""

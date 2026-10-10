@@ -69,3 +69,23 @@ run = [
 [tasks.up-winget]
 description = "WinGetのパッケージを更新"
 run = "winget upgrade --all"
+
+[tasks.in-winget]
+description = "WinGetの未導入パッケージをインストール"
+shell = "powershell -NoProfile -Command"
+run = """
+$packages = @(
+{{- range .packages.windows.wingets.common }}
+    '{{ . }}'
+{{- end }}
+{{- range .packages.windows.wingets.personal }}
+    '{{ . }}'
+{{- end }}
+)
+foreach ($package in $packages) {
+    winget list -e --id "$package" --accept-source-agreements | Out-Null
+    if ($LASTEXITCODE -eq 0) { continue }
+    Write-Host "Installing $package with WinGet..."
+    winget install -e --id "$package" --source winget --silent --accept-source-agreements --accept-package-agreements
+}
+"""
