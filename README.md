@@ -119,12 +119,7 @@ chezmoi diff
 リポジトリの最新の変更をプルし、ホームディレクトリに適用する。
 
 ```bash
-chezmoi update --apply
-
-or
-
 chezmoi update
-chezmoi apply
 ```
 
 ## 開発環境

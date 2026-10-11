@@ -42,9 +42,9 @@ zig = "latest"
 description = "Claude Code Bypass all permission checks"
 run = "claude --dangerously-skip-permissions"
 
-[tasks.dot]
+[tasks.df]
 description = "chezmoiを最新化"
-run = "chezmoi update --apply"
+run = "chezmoi update"
 
 [tasks.killPort]
 description = "指定ポートのプロセスを終了"
@@ -82,10 +82,15 @@ $packages = @(
     '{{ . }}'
 {{- end }}
 )
+$i = 0
 foreach ($package in $packages) {
-    winget list -e --id "$package" --accept-source-agreements | Out-Null
-    if ($LASTEXITCODE -eq 0) { continue }
-    Write-Host "Installing $package with WinGet..."
-    winget install -e --id "$package" --source winget --silent --accept-source-agreements --accept-package-agreements
+    $i++
+    winget list -e --id "$package" --source winget --disable-interactivity --accept-source-agreements | Out-Null
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "[$i/$($packages.Count)] $package : already installed, skipping."
+        continue
+    }
+    Write-Host "[$i/$($packages.Count)] Installing $package with WinGet..."
+    winget install -e --id "$package" --source winget --disable-interactivity --silent --accept-source-agreements --accept-package-agreements
 }
 """
