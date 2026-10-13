@@ -1,3 +1,14 @@
+#!/bin/sh
+# modify_settings.json
+# ~/.claude/settings.json 用 modify スクリプト。
+# Orca / Claude Code が自動追記する `hooks` は実態を温存し、
+# `permissions` / `enabledPlugins` / `extraKnownMarketplaces` / `env` だけ
+# chezmoi 管理値を強制する。stdin=現状の target、stdout=適用内容。
+set -u
+managed=$(mktemp)
+actual=$(mktemp)
+trap 'rm -f "$managed" "$actual"' EXIT INT TERM
+cat >"$managed" <<'MANAGED_EOF'
 {
   "permissions": {
     "allow": [
@@ -63,3 +74,10 @@
     "DISABLE_AUTOUPDATER": "1"
   }
 }
+MANAGED_EOF
+cat >"$actual"
+if ! jq -e . "$actual" >/dev/null 2>&1; then
+  cat "$managed"
+  exit 0
+fi
+jq -s '.[0] * {permissions: .[1].permissions, enabledPlugins: .[1].enabledPlugins, extraKnownMarketplaces: .[1].extraKnownMarketplaces, env: .[1].env}' "$actual" "$managed"
