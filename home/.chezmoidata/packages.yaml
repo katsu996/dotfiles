@@ -54,7 +54,6 @@ packages:
         - google-chrome
         - google-drive
         - google-japanese-ime
-        - hoptodesk
         - jordanbaird-ice@beta
         - logi-options+
         - notion
@@ -79,6 +78,7 @@ packages:
         - zoom
       personal:
         - discord
+        - hoptodesk
         - nordvpn
         - steam
   windows:
