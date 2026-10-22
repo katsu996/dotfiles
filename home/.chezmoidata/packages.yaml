@@ -5,7 +5,6 @@ packages:
         - bat
         - chezmoi
         - cmake
-        - comfyui
         - curl
         - docker
         - fd
@@ -44,6 +43,7 @@ packages:
         - apidog
         - claude
         - codex
+        - comfy
         - cursor
         - cursor-cli
         - dockdoor
