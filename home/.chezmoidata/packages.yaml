@@ -5,6 +5,7 @@ packages:
         - bat
         - chezmoi
         - cmake
+        - comfyui
         - curl
         - docker
         - fd
