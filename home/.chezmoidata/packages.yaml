@@ -43,7 +43,6 @@ packages:
         - apidog
         - claude
         - codex
-        - comfy
         - cursor
         - cursor-cli
         - dockdoor
@@ -54,8 +53,7 @@ packages:
         - gitify
         - google-chrome
         - google-japanese-ime
-        - harry0703/mangodisk/mangodisk
-        - jordanbaird-ice@beta
+        - harry0703/tap/mangodisk
         - logi-options+
         - notion
         - notion-calendar
@@ -77,6 +75,7 @@ packages:
         - slack
         - zoom
       personal:
+        - comfy
         - discord
         - hoptodesk
         - nordvpn
