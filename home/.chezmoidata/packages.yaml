@@ -54,6 +54,7 @@ packages:
         - gitify
         - google-chrome
         - google-japanese-ime
+        - harry0703/mangodisk/mangodisk
         - jordanbaird-ice@beta
         - logi-options+
         - notion
