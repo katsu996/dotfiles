@@ -68,6 +68,7 @@ packages:
         - stats
         - thebrowsercompany-dia
         - visual-studio-code
+        - xcodesorg/made/xcodes
         - zed
       work:
         - drawio
