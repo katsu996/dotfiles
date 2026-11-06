@@ -5,6 +5,7 @@ packages:
         - bat
         - chezmoi
         - cmake
+        - cocoapods
         - curl
         - docker
         - fd
@@ -65,7 +66,6 @@ packages:
         - scroll-reverser
         - sequel-ace
         - stablyai/orca/orca
-        - stats
         - thebrowsercompany-dia
         - visual-studio-code
         - xcodesorg/made/xcodes
