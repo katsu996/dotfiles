@@ -62,6 +62,7 @@ packages:
         - scroll-reverser
         - sequel-ace
         - stablyai/orca/orca
+        - t3-code
         - thebrowsercompany-dia
         - visual-studio-code
         - xcodesorg/made/xcodes
