@@ -24,6 +24,7 @@ packages:
         - make
         - poppler
         - resvg
+        - rg
         - ripgrep
         - sevenzip
         - shellcheck
