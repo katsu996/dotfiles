@@ -38,6 +38,7 @@ packages:
         - alt-tab
         - applite
         - apidog
+        - chatgpt
         - claude
         - codex
         - cursor
