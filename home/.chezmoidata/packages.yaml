@@ -23,6 +23,7 @@ packages:
         - poppler
         - resvg
         - ripgrep
+        - sd
         - shellcheck
         - starship
         - tree
