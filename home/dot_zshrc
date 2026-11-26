@@ -18,12 +18,5 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# Yazi
-# NOTE: https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
+# ローカル設定（マシン固有・機密を含むため別ファイル）
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
