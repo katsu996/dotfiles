@@ -7,6 +7,41 @@ eval "$(zoxide init zsh)"
 # HomeBrewのヒントを非表示
 export HOMEBREW_NO_ENV_HINTS=1
 
+# ============================== #
+# Aliases                        #
+# ============================== #
+alias reload='source ~/.zshrc'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias c='clear'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# ============================== #
+# Git aliases                    #
+# ============================== #
+alias g='git'
+alias ga='git add .'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbm='git branch -m'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gdf='git diff'
+alias gds='git diff --staged'
+alias gl='git log'
+alias glp='git log --oneline --graph --decorate'
+alias gpull='git pull'
+alias gpush='git push'
+alias gpushf='git push --force-with-lease'
+alias gr='git reset --soft HEAD~1'
+alias gs='git switch'
+alias gsatus='git status'
+alias gsd='git switch develop'
+alias gsm='git switch main'
+
 # zsh-completions
 if type brew &>/dev/null; then
   brew_prefix=${HOMEBREW_PREFIX:-$(brew --prefix)}
