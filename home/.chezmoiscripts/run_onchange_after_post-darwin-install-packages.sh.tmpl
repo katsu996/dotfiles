@@ -1,13 +1,25 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-## herdr の設定
-# インテグレーションをインストール
-herdr integration install claude
-herdr integration install cursor
-herdr integration install codex
+## herdr の設定（herdr がある場合のみ）
+if command -v herdr &>/dev/null; then
+    # インテグレーションをインストール
+    herdr integration install claude
+    herdr integration install cursor
+    herdr integration install codex
 
-# プラグインインストール
-herdr plugin install smarzban/herdr-file-viewer
+    # プラグインインストール
+    herdr plugin install smarzban/herdr-file-viewer
+fi
+
+## gh 拡張のインストール・更新（gh がある場合のみ）
+# gh-stack: 未導入ならインストール、導入済みなら更新
+if command -v gh &>/dev/null; then
+    if gh extension list | grep -q 'github/gh-stack'; then
+        gh extension upgrade stack
+    else
+        gh extension install github/gh-stack
+    fi
+fi
 
 {{- end -}}
