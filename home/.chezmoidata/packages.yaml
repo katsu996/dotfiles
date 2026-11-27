@@ -29,6 +29,7 @@ packages:
         - tree
         - yq
         - wget
+        - xcodesorg/made/xcodes
         - zoxide
         - zsh-autosuggestions
         - zsh-completions
@@ -67,7 +68,6 @@ packages:
         - t3-code
         - thebrowsercompany-dia
         - visual-studio-code
-        - xcodesorg/made/xcodes
         - zed
       work:
         - drawio
