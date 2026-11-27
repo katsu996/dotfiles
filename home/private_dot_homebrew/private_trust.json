@@ -1,0 +1,10 @@
+{
+  "trustedcasks": [
+    "harry0703/tap/mangodisk",
+    "sanyam-g/switch/switch",
+    "stablyai/orca/orca"
+  ],
+  "trustedformulae": [
+    "xcodesorg/made/xcodes"
+  ]
+}
